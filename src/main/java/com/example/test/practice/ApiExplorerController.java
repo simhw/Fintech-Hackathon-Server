@@ -1,4 +1,4 @@
-package com.example.test.controller;
+package com.example.test.practice;
 /* Java 샘플 코드 */
 
 import org.json.JSONArray;
@@ -19,7 +19,6 @@ import java.io.IOException;
 @Controller
 public class ApiExplorerController {
 
-	@GetMapping("api")
 	public String api() throws IOException, JSONException {
 		
 		

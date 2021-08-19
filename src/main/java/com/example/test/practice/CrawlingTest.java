@@ -1,4 +1,4 @@
-package com.example.test;
+package com.example.test.practice;
 
 import java.io.IOException;
 import java.util.regex.Matcher;
@@ -13,7 +13,7 @@ public class CrawlingTest {
 
 	public static void main(String[] args) throws Exception {
 
-		String city = "용산구 ";
+		String city = "마포구 공덕동";
 
 		// 네이버 부동산 지역 정보 URL
 		String url = "https://m.land.naver.com/search/result/" + city; 
@@ -35,8 +35,8 @@ public class CrawlingTest {
 			String z = ""; // 확대
 			String cortarNo = ""; // 지역번호
 //			String cortarNm = ""; // 지역이름
-			String rletTpCds = "APT"; // 아파트(APT), 빌라(BL), 오피스텔(OPST)
-			String tradTpCds = "A1:B1:B2"; // 건물유형
+			String rletTpCds = "OPST"; // 아파트(APT), 빌라(BL), 오피스텔(OPST)
+			String tradTpCds = "A1:B1:B2"; // 건물유형 매매, 전세, 월세 
 
 			// lat
 			pattern = Pattern.compile("lat: \\'(.*)\\'");
@@ -95,8 +95,8 @@ public class CrawlingTest {
 				int cnt = Integer.parseInt(items.getString("count"));
 				// 단지 내 매물 정보가 20개가 넘을 시 다음 페이지에 출력해준다. 
 				int iPage = (int) Math.ceil(Integer.parseInt(items.getString("count")) / 20.0);
+				System.out.println("cnt : " + cnt + " iPage : " + iPage);
 				
-				System.out.println("cnt : " + cnt + "iPage : " + iPage);
 				for (int j = 0; j < iPage; j++) {
 
 					doc = Jsoup.connect(url)
@@ -115,6 +115,7 @@ public class CrawlingTest {
 
 					body = doc.select("body").text();
 					System.out.println(body);
+					
 				}
 			}
 
