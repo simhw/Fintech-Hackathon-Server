@@ -20,7 +20,7 @@ import lombok.NoArgsConstructor;
 @Entity 
 public class User {
 
-	@Id 	//pk
+	@Id 	
 	@GeneratedValue(strategy = GenerationType.IDENTITY) 	// auto_increment
 	private int id; 	
 	
