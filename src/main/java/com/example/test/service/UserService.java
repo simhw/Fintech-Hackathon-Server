@@ -10,7 +10,7 @@ import com.example.test.repository.UserRepository;
 
 @Service
 public class UserService {
-	
+
 	@Autowired
 	private UserRepository userRepository;
 	

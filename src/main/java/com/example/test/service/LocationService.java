@@ -1,6 +1,7 @@
 package com.example.test.service;
-import com.example.test.model.Location;
 
+import com.example.test.model.Location;
+import com.example.test.model.User;
 import com.example.test.repository.LocationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

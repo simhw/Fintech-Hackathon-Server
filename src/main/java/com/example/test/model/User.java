@@ -23,21 +23,16 @@ public class User {
 	@Id 	
 	@GeneratedValue(strategy = GenerationType.IDENTITY) 	// auto_increment
 	private int id; 	
-	
 
 	@Column(nullable = false, length = 50, unique = true)
 	private String email;
 	
 	@Column(nullable = false, length = 50) 
 	private String password;
-	
-	
+
 	@Column(nullable = false, length = 30)
 	private String name; 
-	
-	
+
 	@Column
 	private int point;
-	
-	
 }
