@@ -15,7 +15,7 @@ import javax.persistence.*;
 public class Location {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) 	// auto_increment
+    @GeneratedValue(strategy = GenerationType.IDENTITY)    // auto_increment
     private int id;
 
     @Column(nullable = false)
@@ -30,10 +30,12 @@ public class Location {
     @Column(nullable = false)
     private String longitude; // 경도
 
-    @Column(nullable = false)
+    @Lob()
     private String explanation; // 시설 설명
 
     @Column(nullable = false)
     private int kinds; // 시설 종류 (종류에 따라 아이콘 다르게)
 
+    @Column(nullable = false)
+    private String img;
 }
